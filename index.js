@@ -2,6 +2,7 @@ const express = require('express')
 
 const app = express();
 const port = 8080;
+app.use(express.json())
 
 app.get("/", (req,res)=> {
     res.send("This is the homepage")
@@ -13,7 +14,7 @@ const users = [
 ]
 
 //get all user
-app.get("", (req, res)=> {
+app.get("/users", (req, res)=> {
   res.status(200).json(users);
 })
 
